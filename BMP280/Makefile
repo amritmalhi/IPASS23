@@ -12,7 +12,7 @@
 SOURCES := bmp280.cpp
 
 # header files in this project
-HEADERS := bmp280.h
+HEADERS := bmp280.hpp
 
 # other places to look for files for this project
 SEARCH  := 

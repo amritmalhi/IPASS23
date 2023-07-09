@@ -30,3 +30,16 @@
 *.exe
 *.out
 *.app
+
+# Ignore built files
+BMP280/main.bin
+BMP280/main.elf
+BMP280/main.ld
+BMP280/main.map
+
+# Ignore build-related files
+BMP280/_cc_flags
+BMP280/_cpp_flags
+BMP280/_linker_flags
+BMP280/bmptk_fixed_size_stack.c
+

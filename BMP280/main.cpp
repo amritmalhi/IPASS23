@@ -1,5 +1,5 @@
 #include "hwlib.hpp"
-#include "bmp280.h"
+#include "bmp280.hpp"
 
 int main( void ){	
     
@@ -10,22 +10,28 @@ int main( void ){
     
     auto i2c_bus = hwlib::i2c_bus_bit_banged_scl_sda( scl, sda );
     
-    auto bmp = bmp280( i2c_bus, 0x76 );
+    auto bmp = bmp280( i2c_bus );
     
     uint8_t id;
-
-    id = bmp.read8(BMP280_CHIP_ID);
+    uint8_t reset;
+    
+    id = bmp.read8(BMP280_CHIP_ID_REG); // Must be 0x58 when read
+    reset = bmp.read8(BMP280_SOFT_RESET_REG); // Must be 0x00 when read
 
     for(;;){
-        hwlib::cout << "Data from register:" << hwlib::endl;
-        hwlib::cout << "Hexadecimal: 0x" << hwlib::hex << id << hwlib::endl;
-        hwlib::cout << "Decimal: " << hwlib::dec << id << hwlib::endl << hwlib::endl;
+        hwlib::cout << "Data from registers:" << hwlib::endl;
     
-        hwlib::wait_ms( 1'000 );
-    }
+        // Read and print the ID register
+        bmp.printIDRegister();
 
-
-    
+        // Read and print the reset register
+        bmp.printResetRegister();
+        
+        // Read and print the calibration data
+        bmp.printCalibrationData();
+        
+        hwlib::wait_ms( 5'000 );
+    } 
 }
 
     
