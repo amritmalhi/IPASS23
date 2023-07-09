@@ -2,7 +2,7 @@
 
 // Constructor
 // The i2c address is 0x76 if the 'SDO' pin is connected to GND (ground)
-// Refer Chapter 5.2 and 6 of the datasheet for more information
+// Refer to Chapter 5.2 and 6 of the datasheet for more information
 bmp280::bmp280(hwlib::i2c_bus & bus, uint8_t i2c_address ) : bus(bus), i2c_address(i2c_address) {
     loadCalibration();
 }

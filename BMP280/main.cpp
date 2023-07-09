@@ -12,20 +12,14 @@ int main( void ){
     
     auto bmp = bmp280( i2c_bus );
     
-    uint8_t id;
-    uint8_t reset;
-    
-    id = bmp.read8(BMP280_CHIP_ID_REG); // Must be 0x58 when read
-    reset = bmp.read8(BMP280_SOFT_RESET_REG); // Must be 0x00 when read
-
     for(;;){
         hwlib::cout << "Data from registers:" << hwlib::endl;
     
         // Read and print the ID register
-        bmp.printIDRegister();
+        bmp.printIDRegister(); // Must be 0x58 when read
 
         // Read and print the reset register
-        bmp.printResetRegister();
+        bmp.printResetRegister(); // Must be 0x00 when read
         
         // Read and print the calibration data
         bmp.printCalibrationData();

@@ -21,7 +21,7 @@ constexpr uint8_t BMP280_DIG_P9_REG = 0x9E;
 constexpr uint8_t BMP280_CHIP_ID_REG = 0xD0;
 constexpr uint8_t BMP280_SOFT_RESET_REG = 0xE0;
 constexpr uint8_t BMP280_STATUS_REG = 0xF3;
-constexpr uint8_t BMP280_CTRL_MEAS_REG = 0xF4;
+constexpr uint8_t BMP280_CTRL_REG = 0xF4;
 constexpr uint8_t BMP280_CONFIG_REG = 0xF5;
 constexpr uint8_t BMP280_PRESS_DATA_REG = 0xF7;
 constexpr uint8_t BMP280_TEMP_DATA_REG = 0xFA;
@@ -48,19 +48,58 @@ private:
     hwlib::i2c_bus& bus; // hwlib i2c bus for communication with the sensor
     uint8_t i2c_address; // Stores the BMP280's i2c slave address
     bmp280_calibration_data calibration_data; // Struct to hold calibration data
+        
+    // Methods to read and write from/to the sensor
+    uint8_t read8(uint8_t reg);
+    int16_t read16s(uint8_t reg);
+    uint16_t read16u(uint8_t reg);
+    void write(uint8_t reg, uint8_t data);
 
     int32_t compensateTemperature();
     uint32_t compensatePressure();
 
 public:
+
+    // IIR filter settings
+    enum filter_config {
+        FILTER_OFF = 0x00,
+        FILTER_X2 = 0x01,
+        FILTER_X4 = 0x02,
+        FILTER_X8 = 0x03,
+        FILTER_X16 = 0x04
+    };
+    
+    // Oversampling settings for osrs_p or osrs_t
+    enum sampling_config {
+        SAMPLING_NONE = 0x00,
+        SAMPLING_X1 = 0x01,
+        SAMPLING_X2 = 0x02,
+        SAMPLING_X4 = 0x03,
+        SAMPLING_X8 = 0x04,
+        SAMPLING_X16 = 0x05
+    };
+    
+    // Available power modes
+    enum power_modes {
+        SLEEP_MODE = 0x00,
+        FORCED_MODE = 0x02,
+        NORMAL_MODE = 0x03
+    };
+    
+    // Standby time settings for in normal mode
+    enum standby_config {
+        STANDBY_MS_1 = 0x00,
+        STANDBY_MS_63 = 0x01,
+        STANDBY_MS_125 = 0x02,
+        STANDBY_MS_250 = 0x03,
+        STANDBY_MS_500 = 0x04,
+        STANDBY_MS_1000 = 0x05,
+        STANDBY_MS_2000 = 0x06,
+        STANDBY_MS_4000 = 0x07
+    };
+    
     // Constructor
     bmp280(hwlib::i2c_bus& bus, uint8_t i2c_address = 0x76);
-    
-    // Private methods, currently public for debug purposes
-    uint8_t read8(uint8_t reg);
-    int16_t read16s(uint8_t reg);
-    uint16_t read16u(uint8_t reg);
-    void write(uint8_t reg, uint8_t data);
 
     // Methods used to configure the sensor
     void loadCalibration();
