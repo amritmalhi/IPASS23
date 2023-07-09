@@ -1,5 +1,5 @@
 #include "hwlib.hpp"
-#include "BMP280.h"
+#include "bmp280.h"
 
 int main( void ){	
     
@@ -10,11 +10,11 @@ int main( void ){
     
     auto i2c_bus = hwlib::i2c_bus_bit_banged_scl_sda( scl, sda );
     
-    auto bmp = BMP280( i2c_bus, 0x76 );
+    auto bmp = bmp280( i2c_bus, 0x76 );
     
     uint8_t id;
 
-    id = bmp.readRegister(0xD0);
+    id = bmp.read8(BMP280_CHIP_ID);
 
     for(;;){
         hwlib::cout << "Data from register:" << hwlib::endl;
