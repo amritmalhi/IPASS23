@@ -6,6 +6,13 @@
     <TabInfo>
       <wxString Value="/home/int64t/IPASS23/BMP280/bmp280.hpp" Name="FileName"/>
       <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="14" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/home/int64t/IPASS23/BMP280/bmp280_defs.hpp" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
       <int Value="5" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
