@@ -29,6 +29,7 @@
   <Description/>
   <Dependencies/>
   <VirtualDirectory Name="source">
+    <File Name="bmp280_defs.hpp"/>
     <File Name="bmp280.hpp"/>
     <File Name="bmp280.cpp"/>
     <File Name="main.cpp"/>

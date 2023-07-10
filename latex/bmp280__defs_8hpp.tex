@@ -1,0 +1,284 @@
+\hypertarget{bmp280__defs_8hpp}{}\doxysection{BMP280/bmp280\+\_\+defs.hpp File Reference}
+\label{bmp280__defs_8hpp}\index{BMP280/bmp280\_defs.hpp@{BMP280/bmp280\_defs.hpp}}
+
+
+Definitions and constants for BMP280 sensor configuration and data.  
+
+
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{bmp280__defs_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structbmp280__calibration__data}{bmp280\+\_\+calibration\+\_\+data}}
+\begin{DoxyCompactList}\small\item\em Struct that holds calibration data for the BMP280 sensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{bmp280__defs_8hpp_a25fcfe0dfdb4cc25ddb050161105b42f}{sampling\+\_\+config}} \+: uint8\+\_\+t \{ \newline
+\mbox{\hyperlink{bmp280__defs_8hpp_a25fcfe0dfdb4cc25ddb050161105b42fa863fe36022db5d1faf252f21948ba9f6}{SAMPLING\+\_\+\+NONE}} = 0x00
+, \mbox{\hyperlink{bmp280__defs_8hpp_a25fcfe0dfdb4cc25ddb050161105b42faea7b3072c664b5bcc53bb88c3dd71d77}{SAMPLING\+\_\+\+X1}} = 0x01
+, \mbox{\hyperlink{bmp280__defs_8hpp_a25fcfe0dfdb4cc25ddb050161105b42faae9d26608236790c57fc5707ca14deb6}{SAMPLING\+\_\+\+X2}} = 0x02
+, \mbox{\hyperlink{bmp280__defs_8hpp_a25fcfe0dfdb4cc25ddb050161105b42fa8e2cb7afe2c73a213ab23f4ce227a2c9}{SAMPLING\+\_\+\+X4}} = 0x03
+, \newline
+\mbox{\hyperlink{bmp280__defs_8hpp_a25fcfe0dfdb4cc25ddb050161105b42fafbba52a2e7317d7247474cdc55e184d5}{SAMPLING\+\_\+\+X8}} = 0x04
+, \mbox{\hyperlink{bmp280__defs_8hpp_a25fcfe0dfdb4cc25ddb050161105b42fa63019740da87827ac6c2c7b3f090d2cb}{SAMPLING\+\_\+\+X16}} = 0x05
+ \}
+\begin{DoxyCompactList}\small\item\em Oversampling settings for pressure and temperature measurements. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{bmp280__defs_8hpp_a8904bfab23568a01c58620d6095cc5be}{filter\+\_\+config}} \+: uint8\+\_\+t \{ \newline
+\mbox{\hyperlink{bmp280__defs_8hpp_a8904bfab23568a01c58620d6095cc5beab1577adfe34e9a7249c80578493a2a85}{FILTER\+\_\+\+OFF}} = 0x00
+, \mbox{\hyperlink{bmp280__defs_8hpp_a8904bfab23568a01c58620d6095cc5beae58e496c0d461076b52ea1760e0bc37a}{FILTER\+\_\+\+X2}} = 0x01
+, \mbox{\hyperlink{bmp280__defs_8hpp_a8904bfab23568a01c58620d6095cc5beab6fe3bdec5e39b00bec693d68b1b93bb}{FILTER\+\_\+\+X4}} = 0x02
+, \mbox{\hyperlink{bmp280__defs_8hpp_a8904bfab23568a01c58620d6095cc5beabb2108ee413ec924d6937c97876b337e}{FILTER\+\_\+\+X8}} = 0x03
+, \newline
+\mbox{\hyperlink{bmp280__defs_8hpp_a8904bfab23568a01c58620d6095cc5beabf065d59c14be6b2694fba510226ec2d}{FILTER\+\_\+\+X16}} = 0x04
+ \}
+\begin{DoxyCompactList}\small\item\em IIR filter settings. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{bmp280__defs_8hpp_aef4ec417bb76c9db960bfa18be3c7f39}{power\+\_\+modes}} \+: uint8\+\_\+t \{ \mbox{\hyperlink{bmp280__defs_8hpp_aef4ec417bb76c9db960bfa18be3c7f39ad1486bda2c3e55fd939260a6b7e38020}{SLEEP\+\_\+\+MODE}} = 0x00
+, \mbox{\hyperlink{bmp280__defs_8hpp_aef4ec417bb76c9db960bfa18be3c7f39af93f7214719796eb62d49359c1c5eb05}{FORCED\+\_\+\+MODE}} = 0x02
+, \mbox{\hyperlink{bmp280__defs_8hpp_aef4ec417bb76c9db960bfa18be3c7f39a83feb61d42f8db9f494019fcea2c0148}{NORMAL\+\_\+\+MODE}} = 0x03
+ \}
+\begin{DoxyCompactList}\small\item\em Available power modes. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{bmp280__defs_8hpp_a61ea0bc51f59ccf641c37509d211540c}{standby\+\_\+config}} \+: uint8\+\_\+t \{ \newline
+\mbox{\hyperlink{bmp280__defs_8hpp_a61ea0bc51f59ccf641c37509d211540ca43a4007517be4f7d3820e70f9c61a7ff}{STANDBY\+\_\+\+MS\+\_\+1}} = 0x00
+, \mbox{\hyperlink{bmp280__defs_8hpp_a61ea0bc51f59ccf641c37509d211540cac84df2409124b735db178bfb858c7a8d}{STANDBY\+\_\+\+MS\+\_\+63}} = 0x01
+, \mbox{\hyperlink{bmp280__defs_8hpp_a61ea0bc51f59ccf641c37509d211540ca11fff96d8348fe255e688f3830ddb980}{STANDBY\+\_\+\+MS\+\_\+125}} = 0x02
+, \mbox{\hyperlink{bmp280__defs_8hpp_a61ea0bc51f59ccf641c37509d211540ca54910144ead38497b5717cf796ba3070}{STANDBY\+\_\+\+MS\+\_\+250}} = 0x03
+, \newline
+\mbox{\hyperlink{bmp280__defs_8hpp_a61ea0bc51f59ccf641c37509d211540ca9bb10f25dd376b48ca5b05d83f898ed5}{STANDBY\+\_\+\+MS\+\_\+500}} = 0x04
+, \mbox{\hyperlink{bmp280__defs_8hpp_a61ea0bc51f59ccf641c37509d211540ca1b7b322904c4742c90ba4f1859ca4a75}{STANDBY\+\_\+\+MS\+\_\+1000}} = 0x05
+, \mbox{\hyperlink{bmp280__defs_8hpp_a61ea0bc51f59ccf641c37509d211540cae16c2e0c7815030d7c220bc99672d94b}{STANDBY\+\_\+\+MS\+\_\+2000}} = 0x06
+, \mbox{\hyperlink{bmp280__defs_8hpp_a61ea0bc51f59ccf641c37509d211540ca77a3bff96866d8d80c72cc97c140217d}{STANDBY\+\_\+\+MS\+\_\+4000}} = 0x07
+ \}
+\begin{DoxyCompactList}\small\item\em Standby time settings in normal mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr uint8\+\_\+t \mbox{\hyperlink{bmp280__defs_8hpp_aa62c77eec70876f8a9cf44cb53380368}{BMP280\+\_\+\+DIG\+\_\+\+T1\+\_\+\+REG}} = 0x88
+\begin{DoxyCompactList}\small\item\em Register addresses containing calibration data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{bmp280__defs_8hpp_a919967ffa81cea5963037cf018f7465f}\label{bmp280__defs_8hpp_a919967ffa81cea5963037cf018f7465f}} 
+constexpr uint8\+\_\+t {\bfseries BMP280\+\_\+\+DIG\+\_\+\+T2\+\_\+\+REG} = 0x8A
+\item 
+\mbox{\Hypertarget{bmp280__defs_8hpp_a3b332192d566fa95adb9b3ecfba8dee0}\label{bmp280__defs_8hpp_a3b332192d566fa95adb9b3ecfba8dee0}} 
+constexpr uint8\+\_\+t {\bfseries BMP280\+\_\+\+DIG\+\_\+\+T3\+\_\+\+REG} = 0x8C
+\item 
+\mbox{\Hypertarget{bmp280__defs_8hpp_a6953e2f14c76e934b713359d45074612}\label{bmp280__defs_8hpp_a6953e2f14c76e934b713359d45074612}} 
+constexpr uint8\+\_\+t {\bfseries BMP280\+\_\+\+DIG\+\_\+\+P1\+\_\+\+REG} = 0x8E
+\item 
+\mbox{\Hypertarget{bmp280__defs_8hpp_a0b5099e58ee21b7012a4d78efa6b1690}\label{bmp280__defs_8hpp_a0b5099e58ee21b7012a4d78efa6b1690}} 
+constexpr uint8\+\_\+t {\bfseries BMP280\+\_\+\+DIG\+\_\+\+P2\+\_\+\+REG} = 0x90
+\item 
+\mbox{\Hypertarget{bmp280__defs_8hpp_a5f3b810b6b74bed36e226514cbc95f2b}\label{bmp280__defs_8hpp_a5f3b810b6b74bed36e226514cbc95f2b}} 
+constexpr uint8\+\_\+t {\bfseries BMP280\+\_\+\+DIG\+\_\+\+P3\+\_\+\+REG} = 0x92
+\item 
+\mbox{\Hypertarget{bmp280__defs_8hpp_acb8ca9721f376065919889e358eea3fd}\label{bmp280__defs_8hpp_acb8ca9721f376065919889e358eea3fd}} 
+constexpr uint8\+\_\+t {\bfseries BMP280\+\_\+\+DIG\+\_\+\+P4\+\_\+\+REG} = 0x94
+\item 
+\mbox{\Hypertarget{bmp280__defs_8hpp_a0cbcb9b6b2f45f62f22d4b0bfa8c8f4b}\label{bmp280__defs_8hpp_a0cbcb9b6b2f45f62f22d4b0bfa8c8f4b}} 
+constexpr uint8\+\_\+t {\bfseries BMP280\+\_\+\+DIG\+\_\+\+P5\+\_\+\+REG} = 0x96
+\item 
+\mbox{\Hypertarget{bmp280__defs_8hpp_ac819c4ece0c4f2303c3adb31d4c1105e}\label{bmp280__defs_8hpp_ac819c4ece0c4f2303c3adb31d4c1105e}} 
+constexpr uint8\+\_\+t {\bfseries BMP280\+\_\+\+DIG\+\_\+\+P6\+\_\+\+REG} = 0x98
+\item 
+\mbox{\Hypertarget{bmp280__defs_8hpp_acb93d6679bdb08967eb0fc33453be184}\label{bmp280__defs_8hpp_acb93d6679bdb08967eb0fc33453be184}} 
+constexpr uint8\+\_\+t {\bfseries BMP280\+\_\+\+DIG\+\_\+\+P7\+\_\+\+REG} = 0x9A
+\item 
+\mbox{\Hypertarget{bmp280__defs_8hpp_af1d79737a237d503c74f00ee292a5e9c}\label{bmp280__defs_8hpp_af1d79737a237d503c74f00ee292a5e9c}} 
+constexpr uint8\+\_\+t {\bfseries BMP280\+\_\+\+DIG\+\_\+\+P8\+\_\+\+REG} = 0x9C
+\item 
+\mbox{\Hypertarget{bmp280__defs_8hpp_a48bd6118e477d8e012420e57b2659e14}\label{bmp280__defs_8hpp_a48bd6118e477d8e012420e57b2659e14}} 
+constexpr uint8\+\_\+t {\bfseries BMP280\+\_\+\+DIG\+\_\+\+P9\+\_\+\+REG} = 0x9E
+\item 
+constexpr uint8\+\_\+t \mbox{\hyperlink{bmp280__defs_8hpp_a245b99a2608afc7badda5d9f49e155e7}{BMP280\+\_\+\+CHIP\+\_\+\+ID\+\_\+\+REG}} = 0x\+D0
+\begin{DoxyCompactList}\small\item\em Register addresses containing configurations and data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{bmp280__defs_8hpp_a456b305a5e4b8b7ca1a31cdfab731dd3}\label{bmp280__defs_8hpp_a456b305a5e4b8b7ca1a31cdfab731dd3}} 
+constexpr uint8\+\_\+t {\bfseries BMP280\+\_\+\+RESET\+\_\+\+REG} = 0x\+E0
+\item 
+\mbox{\Hypertarget{bmp280__defs_8hpp_a3177074844791211652980b1566446aa}\label{bmp280__defs_8hpp_a3177074844791211652980b1566446aa}} 
+constexpr uint8\+\_\+t {\bfseries BMP280\+\_\+\+STATUS\+\_\+\+REG} = 0x\+F3
+\item 
+\mbox{\Hypertarget{bmp280__defs_8hpp_a09de5ff1a85857f80ab0ec3a9d97dece}\label{bmp280__defs_8hpp_a09de5ff1a85857f80ab0ec3a9d97dece}} 
+constexpr uint8\+\_\+t {\bfseries BMP280\+\_\+\+CTRL\+\_\+\+REG} = 0x\+F4
+\item 
+\mbox{\Hypertarget{bmp280__defs_8hpp_aa59a2f5183a508d7ee1a5cf8e528a66e}\label{bmp280__defs_8hpp_aa59a2f5183a508d7ee1a5cf8e528a66e}} 
+constexpr uint8\+\_\+t {\bfseries BMP280\+\_\+\+CONFIG\+\_\+\+REG} = 0x\+F5
+\item 
+\mbox{\Hypertarget{bmp280__defs_8hpp_a33b5f6b2a84f2d46246445108e2b463e}\label{bmp280__defs_8hpp_a33b5f6b2a84f2d46246445108e2b463e}} 
+constexpr uint8\+\_\+t {\bfseries BMP280\+\_\+\+PRESS\+\_\+\+DATA\+\_\+\+REG} = 0x\+F7
+\item 
+\mbox{\Hypertarget{bmp280__defs_8hpp_a39d7ad1bb27fe35528fd969d6c8662f0}\label{bmp280__defs_8hpp_a39d7ad1bb27fe35528fd969d6c8662f0}} 
+constexpr uint8\+\_\+t {\bfseries BMP280\+\_\+\+TEMP\+\_\+\+DATA\+\_\+\+REG} = 0x\+FA
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Definitions and constants for BMP280 sensor configuration and data. 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{bmp280__defs_8hpp_a8904bfab23568a01c58620d6095cc5be}\label{bmp280__defs_8hpp_a8904bfab23568a01c58620d6095cc5be}} 
+\index{bmp280\_defs.hpp@{bmp280\_defs.hpp}!filter\_config@{filter\_config}}
+\index{filter\_config@{filter\_config}!bmp280\_defs.hpp@{bmp280\_defs.hpp}}
+\doxysubsubsection{\texorpdfstring{filter\_config}{filter\_config}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{bmp280__defs_8hpp_a8904bfab23568a01c58620d6095cc5be}{filter\+\_\+config}} \+: uint8\+\_\+t}
+
+
+
+IIR filter settings. 
+
+This enumeration defines the IIR (Infinite Impulse Response) filter configurations for pressure and temperature measurements on the BMP280 sensor. The values correspond to the settings specified in Chapter 3.\+3.\+3 of the datasheet. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FILTER\_OFF@{FILTER\_OFF}!bmp280\_defs.hpp@{bmp280\_defs.hpp}}\index{bmp280\_defs.hpp@{bmp280\_defs.hpp}!FILTER\_OFF@{FILTER\_OFF}}}\mbox{\Hypertarget{bmp280__defs_8hpp_a8904bfab23568a01c58620d6095cc5beab1577adfe34e9a7249c80578493a2a85}\label{bmp280__defs_8hpp_a8904bfab23568a01c58620d6095cc5beab1577adfe34e9a7249c80578493a2a85}} 
+FILTER\+\_\+\+OFF&Filter off \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FILTER\_X2@{FILTER\_X2}!bmp280\_defs.hpp@{bmp280\_defs.hpp}}\index{bmp280\_defs.hpp@{bmp280\_defs.hpp}!FILTER\_X2@{FILTER\_X2}}}\mbox{\Hypertarget{bmp280__defs_8hpp_a8904bfab23568a01c58620d6095cc5beae58e496c0d461076b52ea1760e0bc37a}\label{bmp280__defs_8hpp_a8904bfab23568a01c58620d6095cc5beae58e496c0d461076b52ea1760e0bc37a}} 
+FILTER\+\_\+\+X2&Filter coefficient 2 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FILTER\_X4@{FILTER\_X4}!bmp280\_defs.hpp@{bmp280\_defs.hpp}}\index{bmp280\_defs.hpp@{bmp280\_defs.hpp}!FILTER\_X4@{FILTER\_X4}}}\mbox{\Hypertarget{bmp280__defs_8hpp_a8904bfab23568a01c58620d6095cc5beab6fe3bdec5e39b00bec693d68b1b93bb}\label{bmp280__defs_8hpp_a8904bfab23568a01c58620d6095cc5beab6fe3bdec5e39b00bec693d68b1b93bb}} 
+FILTER\+\_\+\+X4&Filter coefficient 4 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FILTER\_X8@{FILTER\_X8}!bmp280\_defs.hpp@{bmp280\_defs.hpp}}\index{bmp280\_defs.hpp@{bmp280\_defs.hpp}!FILTER\_X8@{FILTER\_X8}}}\mbox{\Hypertarget{bmp280__defs_8hpp_a8904bfab23568a01c58620d6095cc5beabb2108ee413ec924d6937c97876b337e}\label{bmp280__defs_8hpp_a8904bfab23568a01c58620d6095cc5beabb2108ee413ec924d6937c97876b337e}} 
+FILTER\+\_\+\+X8&Filter coefficient 8 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FILTER\_X16@{FILTER\_X16}!bmp280\_defs.hpp@{bmp280\_defs.hpp}}\index{bmp280\_defs.hpp@{bmp280\_defs.hpp}!FILTER\_X16@{FILTER\_X16}}}\mbox{\Hypertarget{bmp280__defs_8hpp_a8904bfab23568a01c58620d6095cc5beabf065d59c14be6b2694fba510226ec2d}\label{bmp280__defs_8hpp_a8904bfab23568a01c58620d6095cc5beabf065d59c14be6b2694fba510226ec2d}} 
+FILTER\+\_\+\+X16&Filter coefficient 16 \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{bmp280__defs_8hpp_aef4ec417bb76c9db960bfa18be3c7f39}\label{bmp280__defs_8hpp_aef4ec417bb76c9db960bfa18be3c7f39}} 
+\index{bmp280\_defs.hpp@{bmp280\_defs.hpp}!power\_modes@{power\_modes}}
+\index{power\_modes@{power\_modes}!bmp280\_defs.hpp@{bmp280\_defs.hpp}}
+\doxysubsubsection{\texorpdfstring{power\_modes}{power\_modes}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{bmp280__defs_8hpp_aef4ec417bb76c9db960bfa18be3c7f39}{power\+\_\+modes}} \+: uint8\+\_\+t}
+
+
+
+Available power modes. 
+
+This enumeration defines the available power modes for the BMP280 sensor. The values correspond to the settings specified in Chapter 3.\+6 of the datasheet. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SLEEP\_MODE@{SLEEP\_MODE}!bmp280\_defs.hpp@{bmp280\_defs.hpp}}\index{bmp280\_defs.hpp@{bmp280\_defs.hpp}!SLEEP\_MODE@{SLEEP\_MODE}}}\mbox{\Hypertarget{bmp280__defs_8hpp_aef4ec417bb76c9db960bfa18be3c7f39ad1486bda2c3e55fd939260a6b7e38020}\label{bmp280__defs_8hpp_aef4ec417bb76c9db960bfa18be3c7f39ad1486bda2c3e55fd939260a6b7e38020}} 
+SLEEP\+\_\+\+MODE&Sleep mode \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FORCED\_MODE@{FORCED\_MODE}!bmp280\_defs.hpp@{bmp280\_defs.hpp}}\index{bmp280\_defs.hpp@{bmp280\_defs.hpp}!FORCED\_MODE@{FORCED\_MODE}}}\mbox{\Hypertarget{bmp280__defs_8hpp_aef4ec417bb76c9db960bfa18be3c7f39af93f7214719796eb62d49359c1c5eb05}\label{bmp280__defs_8hpp_aef4ec417bb76c9db960bfa18be3c7f39af93f7214719796eb62d49359c1c5eb05}} 
+FORCED\+\_\+\+MODE&Forced mode \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NORMAL\_MODE@{NORMAL\_MODE}!bmp280\_defs.hpp@{bmp280\_defs.hpp}}\index{bmp280\_defs.hpp@{bmp280\_defs.hpp}!NORMAL\_MODE@{NORMAL\_MODE}}}\mbox{\Hypertarget{bmp280__defs_8hpp_aef4ec417bb76c9db960bfa18be3c7f39a83feb61d42f8db9f494019fcea2c0148}\label{bmp280__defs_8hpp_aef4ec417bb76c9db960bfa18be3c7f39a83feb61d42f8db9f494019fcea2c0148}} 
+NORMAL\+\_\+\+MODE&Normal mode \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{bmp280__defs_8hpp_a25fcfe0dfdb4cc25ddb050161105b42f}\label{bmp280__defs_8hpp_a25fcfe0dfdb4cc25ddb050161105b42f}} 
+\index{bmp280\_defs.hpp@{bmp280\_defs.hpp}!sampling\_config@{sampling\_config}}
+\index{sampling\_config@{sampling\_config}!bmp280\_defs.hpp@{bmp280\_defs.hpp}}
+\doxysubsubsection{\texorpdfstring{sampling\_config}{sampling\_config}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{bmp280__defs_8hpp_a25fcfe0dfdb4cc25ddb050161105b42f}{sampling\+\_\+config}} \+: uint8\+\_\+t}
+
+
+
+Oversampling settings for pressure and temperature measurements. 
+
+This enumeration defines the oversampling configurations for pressure and temperature measurements on the BMP280 sensor. The values correspond to the settings specified in Chapter 3.\+3.\+1 and 3.\+3.\+2 of the datasheet. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SAMPLING\_NONE@{SAMPLING\_NONE}!bmp280\_defs.hpp@{bmp280\_defs.hpp}}\index{bmp280\_defs.hpp@{bmp280\_defs.hpp}!SAMPLING\_NONE@{SAMPLING\_NONE}}}\mbox{\Hypertarget{bmp280__defs_8hpp_a25fcfe0dfdb4cc25ddb050161105b42fa863fe36022db5d1faf252f21948ba9f6}\label{bmp280__defs_8hpp_a25fcfe0dfdb4cc25ddb050161105b42fa863fe36022db5d1faf252f21948ba9f6}} 
+SAMPLING\+\_\+\+NONE&No oversampling \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SAMPLING\_X1@{SAMPLING\_X1}!bmp280\_defs.hpp@{bmp280\_defs.hpp}}\index{bmp280\_defs.hpp@{bmp280\_defs.hpp}!SAMPLING\_X1@{SAMPLING\_X1}}}\mbox{\Hypertarget{bmp280__defs_8hpp_a25fcfe0dfdb4cc25ddb050161105b42faea7b3072c664b5bcc53bb88c3dd71d77}\label{bmp280__defs_8hpp_a25fcfe0dfdb4cc25ddb050161105b42faea7b3072c664b5bcc53bb88c3dd71d77}} 
+SAMPLING\+\_\+\+X1&Oversampling x1 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SAMPLING\_X2@{SAMPLING\_X2}!bmp280\_defs.hpp@{bmp280\_defs.hpp}}\index{bmp280\_defs.hpp@{bmp280\_defs.hpp}!SAMPLING\_X2@{SAMPLING\_X2}}}\mbox{\Hypertarget{bmp280__defs_8hpp_a25fcfe0dfdb4cc25ddb050161105b42faae9d26608236790c57fc5707ca14deb6}\label{bmp280__defs_8hpp_a25fcfe0dfdb4cc25ddb050161105b42faae9d26608236790c57fc5707ca14deb6}} 
+SAMPLING\+\_\+\+X2&Oversampling x2 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SAMPLING\_X4@{SAMPLING\_X4}!bmp280\_defs.hpp@{bmp280\_defs.hpp}}\index{bmp280\_defs.hpp@{bmp280\_defs.hpp}!SAMPLING\_X4@{SAMPLING\_X4}}}\mbox{\Hypertarget{bmp280__defs_8hpp_a25fcfe0dfdb4cc25ddb050161105b42fa8e2cb7afe2c73a213ab23f4ce227a2c9}\label{bmp280__defs_8hpp_a25fcfe0dfdb4cc25ddb050161105b42fa8e2cb7afe2c73a213ab23f4ce227a2c9}} 
+SAMPLING\+\_\+\+X4&Oversampling x4 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SAMPLING\_X8@{SAMPLING\_X8}!bmp280\_defs.hpp@{bmp280\_defs.hpp}}\index{bmp280\_defs.hpp@{bmp280\_defs.hpp}!SAMPLING\_X8@{SAMPLING\_X8}}}\mbox{\Hypertarget{bmp280__defs_8hpp_a25fcfe0dfdb4cc25ddb050161105b42fafbba52a2e7317d7247474cdc55e184d5}\label{bmp280__defs_8hpp_a25fcfe0dfdb4cc25ddb050161105b42fafbba52a2e7317d7247474cdc55e184d5}} 
+SAMPLING\+\_\+\+X8&Oversampling x8 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SAMPLING\_X16@{SAMPLING\_X16}!bmp280\_defs.hpp@{bmp280\_defs.hpp}}\index{bmp280\_defs.hpp@{bmp280\_defs.hpp}!SAMPLING\_X16@{SAMPLING\_X16}}}\mbox{\Hypertarget{bmp280__defs_8hpp_a25fcfe0dfdb4cc25ddb050161105b42fa63019740da87827ac6c2c7b3f090d2cb}\label{bmp280__defs_8hpp_a25fcfe0dfdb4cc25ddb050161105b42fa63019740da87827ac6c2c7b3f090d2cb}} 
+SAMPLING\+\_\+\+X16&Oversampling x16 \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{bmp280__defs_8hpp_a61ea0bc51f59ccf641c37509d211540c}\label{bmp280__defs_8hpp_a61ea0bc51f59ccf641c37509d211540c}} 
+\index{bmp280\_defs.hpp@{bmp280\_defs.hpp}!standby\_config@{standby\_config}}
+\index{standby\_config@{standby\_config}!bmp280\_defs.hpp@{bmp280\_defs.hpp}}
+\doxysubsubsection{\texorpdfstring{standby\_config}{standby\_config}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{bmp280__defs_8hpp_a61ea0bc51f59ccf641c37509d211540c}{standby\+\_\+config}} \+: uint8\+\_\+t}
+
+
+
+Standby time settings in normal mode. 
+
+This enumeration defines the standby time settings in normal mode for the BMP280 sensor. The values correspond to the settings specified in Chapter 3.\+6.\+3 of the datasheet. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STANDBY\_MS\_1@{STANDBY\_MS\_1}!bmp280\_defs.hpp@{bmp280\_defs.hpp}}\index{bmp280\_defs.hpp@{bmp280\_defs.hpp}!STANDBY\_MS\_1@{STANDBY\_MS\_1}}}\mbox{\Hypertarget{bmp280__defs_8hpp_a61ea0bc51f59ccf641c37509d211540ca43a4007517be4f7d3820e70f9c61a7ff}\label{bmp280__defs_8hpp_a61ea0bc51f59ccf641c37509d211540ca43a4007517be4f7d3820e70f9c61a7ff}} 
+STANDBY\+\_\+\+MS\+\_\+1&Standby time 1 ms \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STANDBY\_MS\_63@{STANDBY\_MS\_63}!bmp280\_defs.hpp@{bmp280\_defs.hpp}}\index{bmp280\_defs.hpp@{bmp280\_defs.hpp}!STANDBY\_MS\_63@{STANDBY\_MS\_63}}}\mbox{\Hypertarget{bmp280__defs_8hpp_a61ea0bc51f59ccf641c37509d211540cac84df2409124b735db178bfb858c7a8d}\label{bmp280__defs_8hpp_a61ea0bc51f59ccf641c37509d211540cac84df2409124b735db178bfb858c7a8d}} 
+STANDBY\+\_\+\+MS\+\_\+63&Standby time 63 ms \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STANDBY\_MS\_125@{STANDBY\_MS\_125}!bmp280\_defs.hpp@{bmp280\_defs.hpp}}\index{bmp280\_defs.hpp@{bmp280\_defs.hpp}!STANDBY\_MS\_125@{STANDBY\_MS\_125}}}\mbox{\Hypertarget{bmp280__defs_8hpp_a61ea0bc51f59ccf641c37509d211540ca11fff96d8348fe255e688f3830ddb980}\label{bmp280__defs_8hpp_a61ea0bc51f59ccf641c37509d211540ca11fff96d8348fe255e688f3830ddb980}} 
+STANDBY\+\_\+\+MS\+\_\+125&Standby time 125 ms \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STANDBY\_MS\_250@{STANDBY\_MS\_250}!bmp280\_defs.hpp@{bmp280\_defs.hpp}}\index{bmp280\_defs.hpp@{bmp280\_defs.hpp}!STANDBY\_MS\_250@{STANDBY\_MS\_250}}}\mbox{\Hypertarget{bmp280__defs_8hpp_a61ea0bc51f59ccf641c37509d211540ca54910144ead38497b5717cf796ba3070}\label{bmp280__defs_8hpp_a61ea0bc51f59ccf641c37509d211540ca54910144ead38497b5717cf796ba3070}} 
+STANDBY\+\_\+\+MS\+\_\+250&Standby time 250 ms \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STANDBY\_MS\_500@{STANDBY\_MS\_500}!bmp280\_defs.hpp@{bmp280\_defs.hpp}}\index{bmp280\_defs.hpp@{bmp280\_defs.hpp}!STANDBY\_MS\_500@{STANDBY\_MS\_500}}}\mbox{\Hypertarget{bmp280__defs_8hpp_a61ea0bc51f59ccf641c37509d211540ca9bb10f25dd376b48ca5b05d83f898ed5}\label{bmp280__defs_8hpp_a61ea0bc51f59ccf641c37509d211540ca9bb10f25dd376b48ca5b05d83f898ed5}} 
+STANDBY\+\_\+\+MS\+\_\+500&Standby time 500 ms \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STANDBY\_MS\_1000@{STANDBY\_MS\_1000}!bmp280\_defs.hpp@{bmp280\_defs.hpp}}\index{bmp280\_defs.hpp@{bmp280\_defs.hpp}!STANDBY\_MS\_1000@{STANDBY\_MS\_1000}}}\mbox{\Hypertarget{bmp280__defs_8hpp_a61ea0bc51f59ccf641c37509d211540ca1b7b322904c4742c90ba4f1859ca4a75}\label{bmp280__defs_8hpp_a61ea0bc51f59ccf641c37509d211540ca1b7b322904c4742c90ba4f1859ca4a75}} 
+STANDBY\+\_\+\+MS\+\_\+1000&Standby time 1000 ms \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STANDBY\_MS\_2000@{STANDBY\_MS\_2000}!bmp280\_defs.hpp@{bmp280\_defs.hpp}}\index{bmp280\_defs.hpp@{bmp280\_defs.hpp}!STANDBY\_MS\_2000@{STANDBY\_MS\_2000}}}\mbox{\Hypertarget{bmp280__defs_8hpp_a61ea0bc51f59ccf641c37509d211540cae16c2e0c7815030d7c220bc99672d94b}\label{bmp280__defs_8hpp_a61ea0bc51f59ccf641c37509d211540cae16c2e0c7815030d7c220bc99672d94b}} 
+STANDBY\+\_\+\+MS\+\_\+2000&Standby time 2000 ms \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STANDBY\_MS\_4000@{STANDBY\_MS\_4000}!bmp280\_defs.hpp@{bmp280\_defs.hpp}}\index{bmp280\_defs.hpp@{bmp280\_defs.hpp}!STANDBY\_MS\_4000@{STANDBY\_MS\_4000}}}\mbox{\Hypertarget{bmp280__defs_8hpp_a61ea0bc51f59ccf641c37509d211540ca77a3bff96866d8d80c72cc97c140217d}\label{bmp280__defs_8hpp_a61ea0bc51f59ccf641c37509d211540ca77a3bff96866d8d80c72cc97c140217d}} 
+STANDBY\+\_\+\+MS\+\_\+4000&Standby time 4000 ms \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{bmp280__defs_8hpp_a245b99a2608afc7badda5d9f49e155e7}\label{bmp280__defs_8hpp_a245b99a2608afc7badda5d9f49e155e7}} 
+\index{bmp280\_defs.hpp@{bmp280\_defs.hpp}!BMP280\_CHIP\_ID\_REG@{BMP280\_CHIP\_ID\_REG}}
+\index{BMP280\_CHIP\_ID\_REG@{BMP280\_CHIP\_ID\_REG}!bmp280\_defs.hpp@{bmp280\_defs.hpp}}
+\doxysubsubsection{\texorpdfstring{BMP280\_CHIP\_ID\_REG}{BMP280\_CHIP\_ID\_REG}}
+{\footnotesize\ttfamily constexpr uint8\+\_\+t BMP280\+\_\+\+CHIP\+\_\+\+ID\+\_\+\+REG = 0x\+D0\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Register addresses containing configurations and data. 
+
+This section defines the register addresses that contain configurations and data for the BMP280 sensor. The addresses are specified in Chapter 4 of the datasheet. \mbox{\Hypertarget{bmp280__defs_8hpp_aa62c77eec70876f8a9cf44cb53380368}\label{bmp280__defs_8hpp_aa62c77eec70876f8a9cf44cb53380368}} 
+\index{bmp280\_defs.hpp@{bmp280\_defs.hpp}!BMP280\_DIG\_T1\_REG@{BMP280\_DIG\_T1\_REG}}
+\index{BMP280\_DIG\_T1\_REG@{BMP280\_DIG\_T1\_REG}!bmp280\_defs.hpp@{bmp280\_defs.hpp}}
+\doxysubsubsection{\texorpdfstring{BMP280\_DIG\_T1\_REG}{BMP280\_DIG\_T1\_REG}}
+{\footnotesize\ttfamily constexpr uint8\+\_\+t BMP280\+\_\+\+DIG\+\_\+\+T1\+\_\+\+REG = 0x88\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Register addresses containing calibration data. 
+
+This section defines the register addresses that contain calibration data for the BMP280 sensor. The addresses are specified in Chapter 3.\+11.\+2 of the datasheet. 

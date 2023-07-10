@@ -1,0 +1,205 @@
+\hypertarget{classbmp280}{}\doxysection{bmp280 Class Reference}
+\label{classbmp280}\index{bmp280@{bmp280}}
+
+
+Class for interacting with the BMP280 sensor.  
+
+
+
+
+{\ttfamily \#include $<$bmp280.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbmp280_a47111962bcd2251df83a7bd2ae63ec43}{bmp280}} (hwlib\+::i2c\+\_\+bus \&bus, uint8\+\_\+t i2c\+\_\+address=0x76)
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{classbmp280}{bmp280}} class. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbmp280_af07da653c20f2bb99a490a342f751e00}\label{classbmp280_af07da653c20f2bb99a490a342f751e00}} 
+void \mbox{\hyperlink{classbmp280_af07da653c20f2bb99a490a342f751e00}{setup}} ()
+\begin{DoxyCompactList}\small\item\em Setup the sensor by configuring settings for your use case. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbmp280_a11360ae405fabc37c3c7225b3ad016f7}{set\+Power\+Mode}} (\mbox{\hyperlink{bmp280__defs_8hpp_aef4ec417bb76c9db960bfa18be3c7f39}{power\+\_\+modes}} mode)
+\begin{DoxyCompactList}\small\item\em Set the power mode of the sensor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbmp280_a5a7a08b56c6de7f6bc691c71c140605e}{set\+Oversampling}} (\mbox{\hyperlink{bmp280__defs_8hpp_a25fcfe0dfdb4cc25ddb050161105b42f}{sampling\+\_\+config}} osrs\+\_\+t, \mbox{\hyperlink{bmp280__defs_8hpp_a25fcfe0dfdb4cc25ddb050161105b42f}{sampling\+\_\+config}} osrs\+\_\+p)
+\begin{DoxyCompactList}\small\item\em Set the oversampling settings for temperature and pressure measurements. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbmp280_a1feebac0e722aff54dd0d9a0b38cef18}{set\+Filter}} (\mbox{\hyperlink{bmp280__defs_8hpp_a8904bfab23568a01c58620d6095cc5be}{filter\+\_\+config}} filter)
+\begin{DoxyCompactList}\small\item\em Set the IIR filter coefficient for pressure and temperature measurements. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classbmp280_af34bea67508807a16fe1bdeea851ac87}{compensate\+Temperature}} ()
+\begin{DoxyCompactList}\small\item\em Compensate the temperature data and return the compensated value. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classbmp280_ad31ab890ae8b675f940702dbe22b09f7}{compensate\+Pressure}} ()
+\begin{DoxyCompactList}\small\item\em Compensate the pressure data and return the compensated value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbmp280_a61b9a1dd7577a9142fe3e4ab62bbd159}\label{classbmp280_a61b9a1dd7577a9142fe3e4ab62bbd159}} 
+void \mbox{\hyperlink{classbmp280_a61b9a1dd7577a9142fe3e4ab62bbd159}{print\+IDRegister}} ()
+\begin{DoxyCompactList}\small\item\em Print the ID register value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbmp280_a0211fe1f21f08fce9f46c2cfe95511ff}\label{classbmp280_a0211fe1f21f08fce9f46c2cfe95511ff}} 
+void \mbox{\hyperlink{classbmp280_a0211fe1f21f08fce9f46c2cfe95511ff}{print\+Reset\+Register}} ()
+\begin{DoxyCompactList}\small\item\em Print the reset register value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbmp280_a60d12cb4cef090adf8f0023e064135a0}\label{classbmp280_a60d12cb4cef090adf8f0023e064135a0}} 
+void \mbox{\hyperlink{classbmp280_a60d12cb4cef090adf8f0023e064135a0}{print\+Calibration\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Print the calibration data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbmp280_a92d4cc46d27ebebdd6aeda256e53505b}\label{classbmp280_a92d4cc46d27ebebdd6aeda256e53505b}} 
+void \mbox{\hyperlink{classbmp280_a92d4cc46d27ebebdd6aeda256e53505b}{print\+Power\+Mode}} ()
+\begin{DoxyCompactList}\small\item\em Print the power mode setting. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbmp280_af1bede7e75338c04a2893fe789b1839e}\label{classbmp280_af1bede7e75338c04a2893fe789b1839e}} 
+void \mbox{\hyperlink{classbmp280_af1bede7e75338c04a2893fe789b1839e}{print\+Oversampling\+Settings}} ()
+\begin{DoxyCompactList}\small\item\em Print the oversampling settings for temperature and pressure measurements. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbmp280_ae51f99bc231ee96853c0a968f361c6e5}\label{classbmp280_ae51f99bc231ee96853c0a968f361c6e5}} 
+void \mbox{\hyperlink{classbmp280_ae51f99bc231ee96853c0a968f361c6e5}{print\+Filter\+Settings}} ()
+\begin{DoxyCompactList}\small\item\em Print the filter settings. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbmp280_af0cf843c9dad1c5c00569937010ba279}\label{classbmp280_af0cf843c9dad1c5c00569937010ba279}} 
+void \mbox{\hyperlink{classbmp280_af0cf843c9dad1c5c00569937010ba279}{print\+Raw\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Print the raw temperature and pressure data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbmp280_a04762885a02c4117d3c70ae7a3b5e81c}\label{classbmp280_a04762885a02c4117d3c70ae7a3b5e81c}} 
+void \mbox{\hyperlink{classbmp280_a04762885a02c4117d3c70ae7a3b5e81c}{print\+Compensated\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Printthe compensated temperature and pressure data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbmp280_ac15287e5bcd5d26f1ba4a3df79582eb6}\label{classbmp280_ac15287e5bcd5d26f1ba4a3df79582eb6}} 
+void \mbox{\hyperlink{classbmp280_ac15287e5bcd5d26f1ba4a3df79582eb6}{print\+Debug}} ()
+\begin{DoxyCompactList}\small\item\em Print debug information. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classbmp280_a4bd4668221c329f2a723617e2b9f148d}{resultstemp}} \mbox{[}3\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classbmp280_a5a503e62392cc39204222988d194ef6c}{resultspress}} \mbox{[}3\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classbmp280_a149dc85fbd15753624b2028e957c0584}{digtemp}} \mbox{[}6\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classbmp280_a5e735468f93f9f6d505c0214a51d6a4a}{digpress}} \mbox{[}18\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for interacting with the BMP280 sensor. 
+
+This class provides methods to configure the BMP280 sensor, read raw data, compensate data, and print register values.
+
+Took inspiration from\+: Bosch\textquotesingle{}s BMP280 API\+: \href{https://github.com/BoschSensortec/BMP2-Sensor-API/}{\texttt{ https\+://github.\+com/\+Bosch\+Sensortec/\+BMP2-\/\+Sensor-\/\+API/}} \textbackslash{} wovo\textquotesingle{}s example code\+: \href{https://github.com/wovo/hwlib-examples/tree/master/arduino-due/due-\%230210-dmp280}{\texttt{ https\+://github.\+com/wovo/hwlib-\/examples/tree/master/arduino-\/due/due-\/\%230210-\/dmp280}} \textbackslash{} basvandenbergh\+: https\+: \href{https://github.com/BasvandenBergh/IPASS_jaar1_BAS}{\texttt{ https\+://github.\+com/\+Basvanden\+Bergh/\+IPASS\+\_\+jaar1\+\_\+\+BAS}} \textbackslash{} I was not able to get the calibration of raw temperature/pressure data to work with my own read and write methods, so I had to borrow Bas\textquotesingle{} 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbmp280_a47111962bcd2251df83a7bd2ae63ec43}\label{classbmp280_a47111962bcd2251df83a7bd2ae63ec43}} 
+\index{bmp280@{bmp280}!bmp280@{bmp280}}
+\index{bmp280@{bmp280}!bmp280@{bmp280}}
+\doxysubsubsection{\texorpdfstring{bmp280()}{bmp280()}}
+{\footnotesize\ttfamily bmp280\+::bmp280 (\begin{DoxyParamCaption}\item[{hwlib\+::i2c\+\_\+bus \&}]{bus,  }\item[{uint8\+\_\+t}]{i2c\+\_\+address = {\ttfamily 0x76} }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \mbox{\hyperlink{classbmp280}{bmp280}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bus} & The hwlib i2c bus for communication with the sensor. \\
+\hline
+{\em i2c\+\_\+address} & The BMP280\textquotesingle{}s i2c slave address. Default is 0x76. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classbmp280_ad31ab890ae8b675f940702dbe22b09f7}\label{classbmp280_ad31ab890ae8b675f940702dbe22b09f7}} 
+\index{bmp280@{bmp280}!compensatePressure@{compensatePressure}}
+\index{compensatePressure@{compensatePressure}!bmp280@{bmp280}}
+\doxysubsubsection{\texorpdfstring{compensatePressure()}{compensatePressure()}}
+{\footnotesize\ttfamily double bmp280\+::compensate\+Pressure (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Compensate the pressure data and return the compensated value. 
+
+\begin{DoxyReturn}{Returns}
+The compensated pressure value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbmp280_af34bea67508807a16fe1bdeea851ac87}\label{classbmp280_af34bea67508807a16fe1bdeea851ac87}} 
+\index{bmp280@{bmp280}!compensateTemperature@{compensateTemperature}}
+\index{compensateTemperature@{compensateTemperature}!bmp280@{bmp280}}
+\doxysubsubsection{\texorpdfstring{compensateTemperature()}{compensateTemperature()}}
+{\footnotesize\ttfamily double bmp280\+::compensate\+Temperature (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Compensate the temperature data and return the compensated value. 
+
+\begin{DoxyReturn}{Returns}
+The compensated temperature value.
+\end{DoxyReturn}
+The following three methods were written by Bas van den Bergh, a Computer Engineering student at HU. Source\+: \href{https://github.com/BasvandenBergh/IPASS_jaar1_BAS}{\texttt{ https\+://github.\+com/\+Basvanden\+Bergh/\+IPASS\+\_\+jaar1\+\_\+\+BAS}}
+
+The algorithms for calculating the actual temp and pressure were created by Bosch and implemented by wovo. \mbox{\Hypertarget{classbmp280_a1feebac0e722aff54dd0d9a0b38cef18}\label{classbmp280_a1feebac0e722aff54dd0d9a0b38cef18}} 
+\index{bmp280@{bmp280}!setFilter@{setFilter}}
+\index{setFilter@{setFilter}!bmp280@{bmp280}}
+\doxysubsubsection{\texorpdfstring{setFilter()}{setFilter()}}
+{\footnotesize\ttfamily void bmp280\+::set\+Filter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{bmp280__defs_8hpp_a8904bfab23568a01c58620d6095cc5be}{filter\+\_\+config}}}]{filter }\end{DoxyParamCaption})}
+
+
+
+Set the IIR filter coefficient for pressure and temperature measurements. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filter} & The filter coefficient to set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbmp280_a5a7a08b56c6de7f6bc691c71c140605e}\label{classbmp280_a5a7a08b56c6de7f6bc691c71c140605e}} 
+\index{bmp280@{bmp280}!setOversampling@{setOversampling}}
+\index{setOversampling@{setOversampling}!bmp280@{bmp280}}
+\doxysubsubsection{\texorpdfstring{setOversampling()}{setOversampling()}}
+{\footnotesize\ttfamily void bmp280\+::set\+Oversampling (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{bmp280__defs_8hpp_a25fcfe0dfdb4cc25ddb050161105b42f}{sampling\+\_\+config}}}]{osrs\+\_\+t,  }\item[{\mbox{\hyperlink{bmp280__defs_8hpp_a25fcfe0dfdb4cc25ddb050161105b42f}{sampling\+\_\+config}}}]{osrs\+\_\+p }\end{DoxyParamCaption})}
+
+
+
+Set the oversampling settings for temperature and pressure measurements. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em osrs\+\_\+t} & The oversampling setting for temperature. \\
+\hline
+{\em osrs\+\_\+p} & The oversampling setting for pressure. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbmp280_a11360ae405fabc37c3c7225b3ad016f7}\label{classbmp280_a11360ae405fabc37c3c7225b3ad016f7}} 
+\index{bmp280@{bmp280}!setPowerMode@{setPowerMode}}
+\index{setPowerMode@{setPowerMode}!bmp280@{bmp280}}
+\doxysubsubsection{\texorpdfstring{setPowerMode()}{setPowerMode()}}
+{\footnotesize\ttfamily void bmp280\+::set\+Power\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{bmp280__defs_8hpp_aef4ec417bb76c9db960bfa18be3c7f39}{power\+\_\+modes}}}]{mode }\end{DoxyParamCaption})}
+
+
+
+Set the power mode of the sensor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & The power mode to set. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classbmp280_a5e735468f93f9f6d505c0214a51d6a4a}\label{classbmp280_a5e735468f93f9f6d505c0214a51d6a4a}} 
+\index{bmp280@{bmp280}!digpress@{digpress}}
+\index{digpress@{digpress}!bmp280@{bmp280}}
+\doxysubsubsection{\texorpdfstring{digpress}{digpress}}
+{\footnotesize\ttfamily uint8\+\_\+t bmp280\+::digpress\mbox{[}18\mbox{]}}
+
+Buffer to store pressure calibration data \mbox{\Hypertarget{classbmp280_a149dc85fbd15753624b2028e957c0584}\label{classbmp280_a149dc85fbd15753624b2028e957c0584}} 
+\index{bmp280@{bmp280}!digtemp@{digtemp}}
+\index{digtemp@{digtemp}!bmp280@{bmp280}}
+\doxysubsubsection{\texorpdfstring{digtemp}{digtemp}}
+{\footnotesize\ttfamily uint8\+\_\+t bmp280\+::digtemp\mbox{[}6\mbox{]}}
+
+Buffer to store temperature calibration data \mbox{\Hypertarget{classbmp280_a5a503e62392cc39204222988d194ef6c}\label{classbmp280_a5a503e62392cc39204222988d194ef6c}} 
+\index{bmp280@{bmp280}!resultspress@{resultspress}}
+\index{resultspress@{resultspress}!bmp280@{bmp280}}
+\doxysubsubsection{\texorpdfstring{resultspress}{resultspress}}
+{\footnotesize\ttfamily uint8\+\_\+t bmp280\+::resultspress\mbox{[}3\mbox{]}}
+
+Buffer to store pressure results \mbox{\Hypertarget{classbmp280_a4bd4668221c329f2a723617e2b9f148d}\label{classbmp280_a4bd4668221c329f2a723617e2b9f148d}} 
+\index{bmp280@{bmp280}!resultstemp@{resultstemp}}
+\index{resultstemp@{resultstemp}!bmp280@{bmp280}}
+\doxysubsubsection{\texorpdfstring{resultstemp}{resultstemp}}
+{\footnotesize\ttfamily uint8\+\_\+t bmp280\+::resultstemp\mbox{[}3\mbox{]}}
+
+The following variables were written by Bas van den Bergh, a Computer Engineering student at HU. Source\+: \href{https://github.com/BasvandenBergh/IPASS_jaar1_BAS}{\texttt{ https\+://github.\+com/\+Basvanden\+Bergh/\+IPASS\+\_\+jaar1\+\_\+\+BAS}} Buffer to store temperature results 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+BMP280/bmp280.\+hpp\item 
+BMP280/bmp280.\+cpp\end{DoxyCompactItemize}

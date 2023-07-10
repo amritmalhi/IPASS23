@@ -1,0 +1,96 @@
+\label{index_md_README}%
+\Hypertarget{index_md_README}%
+ This project is a C++ library for interfacing with the BMP280 temperature and pressure sensor. It provides functions to configure the sensor, read raw sensor data, and calculate compensated temperature and pressure values.\hypertarget{index_autotoc_md1}{}\doxysection{Contents}\label{index_autotoc_md1}
+
+\begin{DoxyItemize}
+\item \href{\#introduction}{\texttt{ Introduction}}
+\item \href{\#installation}{\texttt{ Installation}}
+\item \href{\#usage}{\texttt{ Usage}}
+\item \href{\#contributing}{\texttt{ Contributing}}
+\item \href{\#license}{\texttt{ License}}
+\end{DoxyItemize}\hypertarget{index_autotoc_md2}{}\doxysection{Introduction}\label{index_autotoc_md2}
+The BMP280 is a digital sensor that measures temperature and pressure. This library provides a convenient interface to interact with the sensor using the I2C communication protocol. It includes functions to set the power mode, configure oversampling settings, read raw sensor data, and calculate compensated temperature and pressure values.
+
+Took inspiration from\+: Bosch\textquotesingle{}s BMP280 API\+: \href{https://github.com/BoschSensortec/BMP2-Sensor-API/}{\texttt{ https\+://github.\+com/\+Bosch\+Sensortec/\+BMP2-\/\+Sensor-\/\+API/}} wovo\textquotesingle{}s example code\+: \href{https://github.com/wovo/hwlib-examples/tree/master/arduino-due/due-\%230210-dmp280}{\texttt{ https\+://github.\+com/wovo/hwlib-\/examples/tree/master/arduino-\/due/due-\/\%230210-\/dmp280}} basvandenbergh\+: https\+: \href{https://github.com/BasvandenBergh/IPASS_jaar1_BAS}{\texttt{ https\+://github.\+com/\+Basvanden\+Bergh/\+IPASS\+\_\+jaar1\+\_\+\+BAS}}
+
+I was not able to get the calibration of raw temperature/pressure data to work with my own read and write methods, so I had to borrow Bas\textquotesingle{}\hypertarget{index_autotoc_md3}{}\doxysection{Installation}\label{index_autotoc_md3}
+
+\begin{DoxyEnumerate}
+\item Clone the repository to your local machine\+:
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{https://github.com/amritmalhi/IPASS23.git}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyEnumerate}
+\item Ensure you have the necessary dependencies installed. This project requires the {\ttfamily hwlib} library for I2C communication.
+\item Build the project using your preferred C++ build system.
+\item Link the built library and include the necessary header files in your project.
+\end{DoxyEnumerate}\hypertarget{index_autotoc_md4}{}\doxysection{Usage}\label{index_autotoc_md4}
+
+\begin{DoxyEnumerate}
+\item Include the {\ttfamily \mbox{\hyperlink{bmp280_8hpp_source}{bmp280.\+hpp}}} header file in your C++ project\+:
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}bmp280.hpp"{}}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyEnumerate}
+\item Create an instance of the {\ttfamily \mbox{\hyperlink{classbmp280}{bmp280}}} class and specify the I2C bus and device address\+:
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Create an instance of the BMP280 class}}
+\DoxyCodeLine{\mbox{\hyperlink{classbmp280}{bmp280}} sensor(i2c\_bus, 0x76);}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyEnumerate}
+\item Initialize the sensor and configure the desired settings\+:
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Initialize the sensor}}
+\DoxyCodeLine{sensor.setup();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Set the power mode}}
+\DoxyCodeLine{sensor.setPowerMode(\mbox{\hyperlink{bmp280__defs_8hpp_aef4ec417bb76c9db960bfa18be3c7f39af93f7214719796eb62d49359c1c5eb05}{bmp280::FORCED\_MODE}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Set the oversampling settings}}
+\DoxyCodeLine{sensor.setOversampling(\mbox{\hyperlink{bmp280__defs_8hpp_a25fcfe0dfdb4cc25ddb050161105b42faea7b3072c664b5bcc53bb88c3dd71d77}{bmp280::SAMPLING\_X1}}, \mbox{\hyperlink{bmp280__defs_8hpp_a25fcfe0dfdb4cc25ddb050161105b42faea7b3072c664b5bcc53bb88c3dd71d77}{bmp280::SAMPLING\_X1}});}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyEnumerate}
+\item Read sensor data\+:
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Read the compensated temperature}}
+\DoxyCodeLine{\textcolor{keywordtype}{double} temperature = sensor.compensateTemperature();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Read the compensated pressure}}
+\DoxyCodeLine{\textcolor{keywordtype}{double} pressure = sensor.compensatePressure();}
+
+\end{DoxyCode}
+
+
+For more detailed examples and usage instructions, please refer to the code documentation.\hypertarget{index_autotoc_md5}{}\doxysection{License}\label{index_autotoc_md5}
+This project is licensed under the \mbox{[}Boost Software License\mbox{]}(LICENSE). 
