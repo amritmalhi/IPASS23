@@ -103,7 +103,7 @@ void bmp280::setup() {
 **/
 
 // Compensates the raw temperature reading
-double bmp280::compensateTemperature() {
+double bmp280::getTemperature() {
     uint32_t raw_temp = readTemperatureRaw();
 
     double var1, var2, T;
@@ -115,7 +115,7 @@ double bmp280::compensateTemperature() {
 }
 
 // Compensates the raw pressure reading
-double bmp280::compensatePressure() {
+double bmp280::getPressure() {
     uint32_t raw_press = readPressureRaw();
 
     double var1, var2, p;
@@ -240,7 +240,7 @@ void bmp280::printCalibrationData() {
     hwlib::cout << "dig_P6: " << calibration_data.dig_P6 << hwlib::endl;
     hwlib::cout << "dig_P7: " << calibration_data.dig_P7 << hwlib::endl;
     hwlib::cout << "dig_P8: " << calibration_data.dig_P8 << hwlib::endl;
-    hwlib::cout << "dig_P9: " << calibration_data.dig_P9 << hwlib::endl << hwlib::endl;
+    hwlib::cout << "dig_P9: " << calibration_data.dig_P9 << hwlib::endl;
 }
 
 // Must be 0x58 when read
@@ -322,14 +322,18 @@ void bmp280::printRawData() {
 }
 
 void bmp280::printCompensatedData() {
-    double temp = compensateTemperature();
-    double press = compensatePressure();
+    double temp = getTemperature();
+    double press = getPressure();
 
     hwlib::cout << "Compensated Temperature: " << static_cast<int>(temp) << " _C" << hwlib::endl;
     hwlib::cout << "Compensated Pressure: " << static_cast<int>(press) << " Pa" << hwlib::endl;
 }
 
 void bmp280::printDebug() {
+    hwlib::cout << "DEBUG INFO" << hwlib::endl;
+    
+    hwlib::cout << "-----" << hwlib::endl << hwlib::endl;
+    
     printIDRegister();
     
     printResetRegister();
@@ -342,7 +346,5 @@ void bmp280::printDebug() {
     
     printCalibrationData();
     
-    printRawData();
-    
-    printCompensatedData();
+    hwlib::cout << hwlib::endl;
 }

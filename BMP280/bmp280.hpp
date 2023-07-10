@@ -119,7 +119,7 @@ public:
      * @brief Compensate the temperature data and return the compensated value.
      * @return The compensated temperature value.
      */
-    double compensateTemperature();
+    double getTemperature();
 
     /**
      * @brief Compensate the pressure data and return the compensated value.
