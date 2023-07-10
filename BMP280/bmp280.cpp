@@ -56,8 +56,41 @@ void bmp280::loadCalibration() {
     calibration_data.dig_P9 = read16s(BMP280_DIG_P9_REG);
 }
 
+// Set the power mode to the desired mode
+// See power_modes enum for available power modes.
+void bmp280::setPowerMode(power_modes mode) {
+    // Read the current value of the control register
+    uint8_t ctrl_meas = read8(BMP280_CTRL_REG);
+
+    // Clear the mode bits (bit 1 and bit 0)
+    ctrl_meas &= ~(0b11);
+
+    // Set the new power mode
+    ctrl_meas |= static_cast<uint8_t>(mode);
+
+    // Write the updated value back to the control register
+    write(BMP280_CTRL_REG, ctrl_meas);
+}
+
+void bmp280::setOversampling(sampling_config osrs_t, sampling_config osrs_p) {
+    // Read the current value of the control register
+    uint8_t ctrl_meas = read8(BMP280_CTRL_REG);
+
+    // Clear the osrs_t and osrs_p bits (bits 7:5 and 4:2)
+    ctrl_meas &= ~(0b111 << 5);
+    ctrl_meas &= ~(0b111 << 2);
+
+    // Set the new oversampling settings
+    ctrl_meas |= static_cast<uint8_t>(osrs_t) << 5;
+    ctrl_meas |= static_cast<uint8_t>(osrs_p) << 2;
+
+    // Write the updated value back to the control register
+    write(BMP280_CTRL_REG, ctrl_meas);
+}
+
+
 void bmp280::printCalibrationData() {
-    hwlib::cout << "Calibration Data:" << hwlib::endl;
+    hwlib::cout << "Calibration Data:" << hwlib::dec << hwlib::endl;
     hwlib::cout << "dig_T1: " << calibration_data.dig_T1 << hwlib::endl;
     hwlib::cout << "dig_T2: " << calibration_data.dig_T2 << hwlib::endl;
     hwlib::cout << "dig_T3: " << calibration_data.dig_T3 << hwlib::endl;
@@ -72,18 +105,67 @@ void bmp280::printCalibrationData() {
     hwlib::cout << "dig_P9: " << calibration_data.dig_P9 << hwlib::endl << hwlib::endl;
 }
 
+// Must be 0x58 when read
 void bmp280::printIDRegister() {
-    uint8_t id = read8(BMP280_CHIP_ID_REG);
+    uint8_t id = read8(BMP280_CHIP_ID_REG); 
     
     hwlib::cout << "ID Register:" << hwlib::endl;
     hwlib::cout << "Hexadecimal: 0x" << hwlib::hex << hwlib::setw(2) << hwlib::setfill('0') << id << hwlib::endl;
     hwlib::cout << "Decimal: " << hwlib::dec << id << hwlib::endl << hwlib::endl;
 }
 
+// Must be 0x00 when read
 void bmp280::printResetRegister() {
-    uint8_t reset = read8(BMP280_SOFT_RESET_REG);
+    uint8_t reset = read8(BMP280_RESET_REG);
     
     hwlib::cout << "Reset Register:" << hwlib::endl;
-    hwlib::cout << "Hexadecimal: 0x" << hwlib::hex << hwlib::setw(2) << hwlib::setfill('0') << reset << hwlib::endl;
-    hwlib::cout << "Decimal: " << hwlib::dec << reset << hwlib::endl << hwlib::endl;
+    hwlib::cout << "0x" << hwlib::hex << hwlib::setw(2) << hwlib::setfill('0') << reset << hwlib::endl << hwlib::endl;
+}
+
+void bmp280::printPowerMode() {
+    // Read the current value of the control register
+    uint8_t ctrl_meas = read8(BMP280_CTRL_REG);
+
+    // Extract the power mode bits (bit 1 and bit 0)
+    uint8_t power_mode = ctrl_meas & 0b11;
+
+    // Print the power mode
+    hwlib::cout << "Power Mode: " << hwlib::endl;
+    switch (power_mode) {
+        case SLEEP_MODE:
+            hwlib::cout << "Sleep mode";
+            break;
+        case FORCED_MODE:
+            hwlib::cout << "Forced mode";
+            break;
+        case NORMAL_MODE:
+            hwlib::cout << "Normal mode";
+            break;
+        default:
+            hwlib::cout << "Unknown mode";
+            break;
+    }
+    hwlib::cout << hwlib::endl << hwlib::endl;
+}
+
+void bmp280::printOversamplingSettings() {
+    // Read the current value of the control register
+    uint8_t ctrl_meas = read8(BMP280_CTRL_REG);
+
+    // Extract the osrs_t and osrs_p bits (bits 7:5 and 4:2)
+    uint8_t osrs_t = (ctrl_meas >> 5) & 0b111;
+    uint8_t osrs_p = (ctrl_meas >> 2) & 0b111;
+
+    // Print the oversampling settings
+    hwlib::cout << "Oversampling Settings:" << hwlib::endl;
+    hwlib::cout << "Temperature: 0x" << hwlib::hex << hwlib::setw(2) << hwlib::setfill('0') << static_cast<sampling_config>(osrs_t) << hwlib::endl;
+    hwlib::cout << "Pressure: 0x" << hwlib::hex << hwlib::setw(2) << hwlib::setfill('0') << static_cast<sampling_config>(osrs_p) << hwlib::endl << hwlib::endl;
+}
+
+void bmp280::printDebug(){
+    printIDRegister();
+    printResetRegister();
+    printPowerMode();
+    printOversamplingSettings();
+    printCalibrationData();
 }

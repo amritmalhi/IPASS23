@@ -14,17 +14,12 @@ int main( void ){
     
     for(;;){
         hwlib::cout << "Data from registers:" << hwlib::endl;
+        
+        hwlib::cout << "---" << hwlib::endl << hwlib::endl;
     
-        // Read and print the ID register
-        bmp.printIDRegister(); // Must be 0x58 when read
-
-        // Read and print the reset register
-        bmp.printResetRegister(); // Must be 0x00 when read
+        bmp.printDebug();
         
-        // Read and print the calibration data
-        bmp.printCalibrationData();
-        
-        hwlib::wait_ms( 5'000 );
+        hwlib::wait_ms( 10000 );
     } 
 }
 
