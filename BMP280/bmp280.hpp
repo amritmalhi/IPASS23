@@ -125,7 +125,7 @@ public:
      * @brief Compensate the pressure data and return the compensated value.
      * @return The compensated pressure value.
      */
-    double compensatePressure();
+    double getPressure();
 
     /**
      * @brief Print the ID register value.
